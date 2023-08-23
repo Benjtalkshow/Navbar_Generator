@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+    <style>
+        body {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            background-image: url(/asset/image/loginbackground.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login {
+            width: 40%;
+            height: 60vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0));
+            -moz-webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 1vw 1vw;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px #00000035;
+        }
+
+        form h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        form input {
+            outline-style: none;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            padding: 15px;
+            width: 100%;
+            margin-bottom: 15px;
+            transition: all .5s ease-in;
+        }
+
+        input:hover {
+            border: 2px solid #fff;
+        }
+        form button {
+            background: #fff;
+            color: rgb(81, 81, 241);
+            border: 1px solid rgb(81, 81, 241);
+            padding: 15px;
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            margin: 20px auto 0;
+            border-radius: 30px;
+            transition: all .5s ease-in;
+            margin-bottom: 5px;
+        }
+
+        form button:hover {
+            border: 2px solid rgb(81, 81, 241);
+            background: rgb(81, 81, 241);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login">
+        <form>
+            <h2>REGISTER HERE</h2>
+            <input type="text" id="fullname" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Passwords" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+
+</html>

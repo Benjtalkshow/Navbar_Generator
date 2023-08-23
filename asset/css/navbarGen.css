@@ -1,0 +1,7 @@
+.showcode {
+    width: calc(100% - 50%);
+}
+.code-list-btn.active {
+    background-color: rgb(54, 51, 51);
+    color: white;
+}

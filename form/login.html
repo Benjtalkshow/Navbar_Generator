@@ -1,0 +1,169 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            background-image: url(/asset/image/loginbackground.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register {
+            width: 40%;
+            height: 60vh;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1),
+                    rgba(255, 255, 255, 0));
+            -moz-webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0;
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 1vw 1vw;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px #00000035;
+        }
+        form h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        input {
+            outline-style: none;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            padding: 15px;
+            width: 100%;
+            margin-bottom: 15px;
+            transition: all .2s ease-in-out;
+        }
+
+        input:focus {
+            width: 100%;
+            animation-name: colorChange;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes colorChange {
+            0% {
+                border-color: green;
+                color: green;
+            }
+
+            10% {
+                border-color: yellow;
+                color: yellow;
+            }
+
+            20% {
+                border-color: hotpink;
+                color: hotpink;
+            }
+
+            30% {
+                border-color: red;
+                color: red;
+            }
+
+            40% {
+                border-color: purple;
+                color: purple;
+            }
+
+            50% {
+                border-color: yellow;
+                color: yellow;
+            }
+
+            60% {
+                border-color: cyan;
+                color: cyan;
+            }
+
+            70% {
+                border-color: skyblue;
+                color: skyblue;
+            }
+
+            80% {
+                border-color: pink;
+                color: pink;
+            }
+
+            90% {
+                border-color: red;
+                color: red;
+            }
+
+            100% {
+                border-color: yellow;
+                color: yellow;
+            }
+        }
+
+        .login {
+            background: #fff;
+            color: rgb(81, 81, 241);
+            border: 2px solid rgb(81, 81, 241);
+            padding: 15px;
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            margin: 20px auto 0;
+            border-radius: 30px;
+            margin-bottom: 5px;
+            transition: all .3s ease-in-out;
+        }
+
+        .login:hover {
+            border: 2px solid rgb(81, 81, 241);
+            background: rgb(81, 81, 241);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register">
+        <form action="">
+            <h2 class="title">LOGIN HERE</h2>
+            <input type="email" name="" class="email" placeholder="Email">
+            <input type="password" name="" class="password" placeholder="Password">
+            <button class="login">Login</button>
+        </form>
+    </div>
+</body>
+
+</html>
