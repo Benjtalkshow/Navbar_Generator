@@ -2,14 +2,14 @@
 const banner = document.querySelector('.banner');
 (function(){
     banner.innerHTML = `
-    <div class="relative flex flex-wrap bg-indigo-500 px-4 py-3 sm:flex-nowrap sm:items-center sm:justify-center sm:gap-3 sm:pr-8 md:px-8">
-    <div class="order-1 mb-2 inline-block w-11/12 max-w-screen-sm text-sm text-white sm:order-none sm:mb-0 sm:w-auto md:text-base">This is a section of some simple filler text, also known as placeholder text.</div>
+    <div class="learn-more relative flex flex-wrap bg-indigo-500 px-4 py-3 sm:flex-nowrap sm:items-center sm:justify-center sm:gap-3 sm:pr-8 md:px-8">
+    <div class="order-1 mb-2 inline-block w-11/12 max-w-screen-sm text-sm text-white sm:order-none sm:mb-0 sm:w-auto md:text-base">This project is still ongoing. You can contribute if your a developer | <a href="https://www.linkedin.com/in/nnaji-benjamin-542773182/" target="_blank">Nnaji Benjamin</a>.</div>
 
-    <a href="#" class="order-last inline-block w-full whitespace-nowrap rounded-lg bg-main px-4 py-2 text-center text-xs font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-700 focus-visible:ring bg-indigo-800 sm:order-none sm:w-auto md:text-sm">Learn more</a>
+    <a href="https://github.com/Benjtalkshow/Navbar_Generator" target="_blank" class="order-last inline-block w-full whitespace-nowrap rounded-lg bg-main px-4 py-2 text-center text-xs font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-700 focus-visible:ring bg-indigo-800 sm:order-none sm:w-auto md:text-sm">Learn More</a>
 
     <!-- close button - start -->
     <div class="order-2 flex w-1/12 items-start justify-end sm:absolute sm:right-0 sm:order-none sm:mr-1 sm:w-auto xl:mr-3">
-      <button type="button" class="text-white transition duration-100 hover:text-indigo-100 active:text-indigo-200">
+      <button type="button" class="learn-more-btn text-white transition duration-100 hover:text-indigo-100 active:text-indigo-200">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -22,8 +22,8 @@ const banner = document.querySelector('.banner');
 const printSection = document.querySelector('.printsection');
 (function(){
   printSection.innerHTML = `
-  <button class="printButton bg-indigo-500 text-white text-md py-3 px-3 border-none outline-none hover:bg-indigo-600">PRINT CODE</button>
-<section class="view flex flex-col md:flex-row gap-10 mt-10 hidden">
+  <button class="printButton bg-indigo-500 text-white text-md py-3 px-8 border-none outline-none hover:bg-indigo-600">CLOSE</button>
+<section class="view flex-col md:flex-row gap-10 mt-10">
   <div class="code-list flex flex-col gap-5">
     <button class="code-list-btn bg-gray-100 text-black text-md py-3 px-3 border-none outline-none hover:bg-gray-600 hover:text-white">HTML</button>
     <button class="code-list-btn bg-gray-100 text-black text-md py-3 px-3 border-none outline-none hover:bg-gray-600 hover:text-white">CSS</button>
@@ -31,12 +31,15 @@ const printSection = document.querySelector('.printsection');
   </div>
   <section class="showcode flex flex-col bg-indigo-500 w-[100%] md:w-[70%] h-auto py-5 px-5 box-border overflow-hidden">
    <div class="editor bg-yellow-500 w-[100%] h-[100%] py-3 px-3 shadow-md box-border overflow-hidden relative shadow-md">
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ea incidunt possimus inventore consectetur dignissimos unde repellendus corrupti error tenetur. Ipsum minus obcaecati tempora minima nemo consequatur, quidem totam non!
         <button class="copy-btn py-1 absolute top-0 right-0 px-1 bg-white text-black text-md border-none outline-none hover:bg-indigo-600 hover:text-white">Copy</button>
    </div>
    <div class="editor bg-green-500 w-[100%] h-[100%] py-3 px-3 shadow-md box-border overflow-hidden relative shadow-md hidden">
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ea incidunt possimus inventore consectetur dignissimos unde repellendus corrupti error tenetur. Ipsum minus obcaecati tempora minima nemo consequatur, quidem totam non!
     <button class="copy-btn py-1 absolute top-0 right-0 px-1 bg-white text-black text-md border-none outline-none hover:bg-indigo-600 hover:text-white">Copy</button>
 </div>
 <div class="editor bg-red-500 w-[100%] h-[100%] py-3 px-3 shadow-md box-border overflow-hidden relative shadow-md hidden">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ea incidunt possimus inventore consectetur dignissimos unde repellendus corrupti error tenetur. Ipsum minus obcaecati tempora minima nemo consequatur, quidem totam non!
   <button class="copy-btn py-1 absolute top-0 right-0 px-1 bg-white text-black text-md border-none outline-none hover:bg-indigo-600 hover:text-white">Copy</button>
 </div>
   </section>

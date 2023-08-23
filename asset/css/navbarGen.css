@@ -5,3 +5,15 @@
     background-color: rgb(54, 51, 51);
     color: white;
 }
+.view {
+    position: relative; /* Set relative positioning */
+    display: flex;
+
+  }
+  
+  /* Add styles for the hidden state */
+  .view.hide {
+    display: none;
+    position: absolute; /* Set absolute positioning when hidden */
+  }
+  
