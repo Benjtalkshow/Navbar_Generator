@@ -14,7 +14,7 @@ printButton.addEventListener("click", () => {
     if (printButton.textContent === "PRINT CODE") {
         printButton.textContent = "CLOSE";
     } else {
-        printButton.textContent = "PRINT CLOSE";
+        printButton.textContent = "PRINT CODE";
     }
     view.classList.toggle("hide");
 });
@@ -84,3 +84,15 @@ function eddd(){
     })
     //end of checking classname
 }eddd()
+
+
+// slider function
+const slider = document.getElementById("myRange");
+const output = document.getElementById("demo");
+const outputDiv = document.getElementById("output");
+
+slider.addEventListener("input", function() {
+  output.innerHTML = slider.value + "px";
+//   outputDiv.style.left = (slider.value / 100) * 100 + "px";
+//   outputDiv.style.top = (100 - slider.value) / 2 + "px";
+});

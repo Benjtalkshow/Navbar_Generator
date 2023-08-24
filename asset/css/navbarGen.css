@@ -1,17 +1,49 @@
 .showcode {
-    width: calc(100% - 50%);
+  width: calc(100% - 50%);
 }
+
 .code-list-btn.active {
-    background-color: rgb(54, 51, 51);
-    color: white;
+  background-color: rgb(54, 51, 51);
+  color: white;
 }
 
 .view.hide {
-    position: relative; 
-    display: flex;
-  }
-  .view {
-    display: none;
-    position: absolute;
-  }
-  
+  position: relative;
+  display: flex;
+}
+
+.view {
+  display: none;
+  position: absolute;
+}
+
+#demo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color:rgb(99 102 241) ;
+  padding: 5px;
+  border-radius: 8px;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  color: #fff;
+  font-size: small;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(99 102 241) !important;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background-color: #bbb;
+}
+
+.slider::-webkit-slider-thumb:active {
+  background-color: #ddd;
+}

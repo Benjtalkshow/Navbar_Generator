@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/asset/css/navbarGen.css">
   <link rel="stylesheet" href="/asset/css/usernavBar.css">
   <style type="text/tailwindcss">
-    @layer utilities {
+  @layer utilities {
         }
 </style>
   <title>NavBar Generator</title>
@@ -18,14 +18,15 @@
 
 <body>
   <!-- banner - start -->
-  <div class="banner bg-white pb-6 sm:pb-8 lg:pb-12">
+  <!-- sm:pb-8 lg:pb-12 -->
+  <div class="banner bg-white">
   </div>
   <!--  Banner-end -->
   <nav class="navbar">
     <!-- user-navbar-start -->
     <div class="logo">
-<img src="/asset/image/rainbow hair.jpg" alt="logo" class="image-logo">     
-<h1 class="text-logo">LOGO</h1>
+      <img src="/asset/image/rainbow hair.jpg" alt="logo" class="image-logo">
+      <h1 class="text-logo">LOGO</h1>
     </div>
     <ul class="unordered-list">
       <li class="list-items"><a href="#" class="list-links">Home</a></li>
@@ -38,23 +39,46 @@
     </div>
     <!-- end-user-navbar -->
   </nav>
+
+  <!-- usernavBar tools -->
+  <div class="slider-container py-5 px-20 w-[90%]">
+    <div class="slide w-[50%] h-5 relative py-10">
+      <input type="range" min="1" max="100" value="1" class="slider w-full h-5 bg-indigo-700" id="myRange">
+      <div class="output mt-2"><span id="demo">1px</span></div>
+    </div>
+    <div class="slide w-[50%] h-5 relative py-10">
+      <input type="range" min="1" max="100" value="1" class="slider w-full h-5 bg-indigo-700" id="myRange">
+      <div class="output mt-2"><span id="demo">1px</span></div>
+    </div>
+    <div class="slide w-[50%] h-5 relative py-10">
+      <input type="range" min="1" max="100" value="1" class="slider w-full h-5 bg-indigo-700" id="myRange">
+      <div class="output mt-2"><span id="demo">1px</span></div>
+    </div>
+  </div>
+  <!--end usernavBar tools -->
   <!-- print-section-start -->
-<section class="printsection w-full px-3 sm:px-20 h-[0px] mt-12">
-</section>
-<!-- print-section-end -->
+  <section class="printsection w-full px-3 sm:px-20 h-[0px] mt-12">
+  </section>
+  <!-- print-section-end -->
   <!-- floating-navbar -->
   <div
-    class="sitenav floating-navbar fixed bottom-[30%] max-sm:w-full left-[50%] translate-x-[-50%] bg-white sm:border-l sm:border-r border-t sm:text-sm  text-xs sm:shadow-md flex justify-center items-center py-4 px-10 gap-8 sm:rounded-md">
+    class="sitenav floating-navbar fixed bottom-0 max-sm:w-full left-[50%] translate-x-[-50%] bg-white sm:border-l sm:border-r border-t sm:text-sm  text-xs sm:shadow-md flex justify-center items-center py-4 px-10 gap-8 sm:rounded-md">
   </div>
   <!-- floating-navbar-end -->
 
-
-  <!-- footer - start -->
-  <div class="footer bg-white pt-4 sm:pt-10 lg:pt-12 w-full absolute bottom-0 -z-[99]">
-  </div>
-  <!-- footer - end -->
   <script src="/asset/js/navbarGen.js"></script>
   <script src="/asset/js/print_section.js"></script>
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/64e2a10094cf5d49dc6b82dd/1h8ak9tdp';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
 </body>
 
 </html>
