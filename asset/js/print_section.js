@@ -75,7 +75,9 @@ function eddd(){
         if (edd.classList.contains("html")) {
             edd.textContent = "<h1 class='heading'>Hello World</h1>";
         } else if (edd.classList.contains("css")) {
-            edd.textContent = ".heading {color: red;}";
+            edd.textContent = `.heading {
+                color: red;
+            }`;
         } else {
             edd.textContent = "const heading = document.querySeelector('.heading');";
         }
