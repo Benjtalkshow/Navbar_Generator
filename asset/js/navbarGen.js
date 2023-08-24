@@ -22,7 +22,7 @@ const banner = document.querySelector('.banner');
 const printSection = document.querySelector('.printsection');
 (function(){
   printSection.innerHTML = `
-  <button class="printButton bg-indigo-500 text-white text-md py-3 px-8 border-none outline-none hover:bg-indigo-600">CLOSE</button>
+  <button class="printButton bg-indigo-500 text-white text-md py-3 px-8 border-none outline-none hover:bg-indigo-600">PRINT CODE</button>
 <section class="view flex-col md:flex-row gap-10 mt-10">
   <div class="code-list flex flex-col gap-5">
     <button class="code-list-btn bg-gray-100 text-black text-md py-3 px-3 border-none outline-none hover:bg-gray-600 hover:text-white">HTML</button>
@@ -30,16 +30,19 @@ const printSection = document.querySelector('.printsection');
     <button class="code-list-btn bg-gray-100 text-black text-md py-3 px-3 border-none outline-none hover:bg-gray-600 hover:text-white">JAVASCRIPT</button> 
   </div>
   <section class="showcode flex flex-col bg-indigo-500 w-[100%] md:w-[70%] h-auto py-5 px-5 box-border overflow-hidden">
-   <div class="editor bg-yellow-500 w-[100%] h-[100%] py-3 px-3 shadow-md box-border overflow-hidden relative shadow-md">
-   Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ea incidunt possimus inventore consectetur dignissimos unde repellendus corrupti error tenetur. Ipsum minus obcaecati tempora minima nemo consequatur, quidem totam non!
+   <div class="editor bg-black w-[100%] h-[100%] py-3 px-3 shadow-md box-border  relative shadow-md">
+   <p class="editor-text html text-white">
+   </p>
         <button class="copy-btn py-1 absolute top-0 right-0 px-1 bg-white text-black text-md border-none outline-none hover:bg-indigo-600 hover:text-white">Copy</button>
    </div>
-   <div class="editor bg-green-500 w-[100%] h-[100%] py-3 px-3 shadow-md box-border overflow-hidden relative shadow-md hidden">
-   Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ea incidunt possimus inventore consectetur dignissimos unde repellendus corrupti error tenetur. Ipsum minus obcaecati tempora minima nemo consequatur, quidem totam non!
+   <div class="editor bg-black w-[100%] h-[100%] py-3 px-3 shadow-md box-border  relative shadow-md hidden">
+   <p class="editor-text css text-white">
+   </p>
     <button class="copy-btn py-1 absolute top-0 right-0 px-1 bg-white text-black text-md border-none outline-none hover:bg-indigo-600 hover:text-white">Copy</button>
 </div>
-<div class="editor bg-red-500 w-[100%] h-[100%] py-3 px-3 shadow-md box-border overflow-hidden relative shadow-md hidden">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ea incidunt possimus inventore consectetur dignissimos unde repellendus corrupti error tenetur. Ipsum minus obcaecati tempora minima nemo consequatur, quidem totam non!
+<div class="editor bg-black w-[100%] h-[100%] py-3 px-3 shadow-md box-border  relative shadow-md hidden">
+<p class="editor-text js text-white">
+</p>
   <button class="copy-btn py-1 absolute top-0 right-0 px-1 bg-white text-black text-md border-none outline-none hover:bg-indigo-600 hover:text-white">Copy</button>
 </div>
   </section>

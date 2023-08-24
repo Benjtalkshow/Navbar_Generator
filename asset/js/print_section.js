@@ -6,16 +6,19 @@ learnMoreBtn.addEventListener('click', () => {
 })
 
 //print button function
+//print button function
 const printButton = document.querySelector(".printButton");
 const view = document.querySelector(".view");
+
 printButton.addEventListener("click", () => {
-    if (printButton.textContent === "CLOSE") {
-        printButton.textContent = "PRINT CODE";
-    } else {
+    if (printButton.textContent === "PRINT CODE") {
         printButton.textContent = "CLOSE";
+    } else {
+        printButton.textContent = "PRINT CLOSE";
     }
     view.classList.toggle("hide");
 });
+
 
 //code editors function
 function editors() {
@@ -44,12 +47,12 @@ codeListBtn();
 //code to copy texts
 const copyBtn = document.querySelectorAll('.copy-btn');
 copyBtn.forEach((btn, copyBtn_Index) => {
-    const textEditors = document.querySelectorAll('.editor')
+    const textEditors = document.querySelectorAll('.editor-text')
     btn.addEventListener('click', () => {
         textEditors.forEach((textEditor, textEditorIndex) => {
             if (copyBtn_Index === textEditorIndex) {
                 const clipboard = navigator.clipboard;
-                const showCopiedText = textEditor.textContent.replaceAll("Copy", "");
+                const showCopiedText = textEditor.textContent
                 try {
                     clipboard.writeText(showCopiedText);
                     btn.textContent = "Copied!!";
@@ -60,8 +63,22 @@ copyBtn.forEach((btn, copyBtn_Index) => {
                 } catch (error) {
                     return false;
                 }
-
             }
         })
     })
 })
+
+function eddd(){
+    //checking classname
+    const edition = document.querySelectorAll('.editor-text')
+    edition.forEach((edd) => {
+        if (edd.classList.contains("html")) {
+            edd.textContent = "<h1 class='heading'>Hello World</h1>";
+        } else if (edd.classList.contains("css")) {
+            edd.textContent = ".heading {color: red;}";
+        } else {
+            edd.textContent = "const heading = document.querySeelector('.heading');";
+        }
+    })
+    //end of checking classname
+}eddd()
