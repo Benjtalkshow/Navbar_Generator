@@ -89,7 +89,7 @@ const outputDiv = document.getElementById("output");
 const unorderedList = document.querySelector('.unordered-list');
 unorderedList.style.gap = slider.value + "px";
 output.innerHTML = slider.value + "px";
-output.style.left = slider.value + "px";
+output.style.left = slider.value + "%";
 
 slider.addEventListener("input", function(event) {
   output.innerHTML = event.target.value + "px";
@@ -97,7 +97,7 @@ slider.addEventListener("input", function(event) {
   output.style.left = event.target.value - 10 + "%";
   if(event.target.value == 1){
     output.style.marginLeft = 10 + "%";
-  } else if(event.target.value > 1) {
+  } else if(event.target.value > 10) {
     output.style.marginLeft = 0 + "%";
   }
 });
