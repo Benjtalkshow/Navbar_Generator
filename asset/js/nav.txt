@@ -1,0 +1,39 @@
+<nav>
+  <!-- Your navbar HTML code here -->
+</nav>
+
+<button id="htmlBtn">HTML</button>
+<button id="cssBtn">CSS</button>
+<button id="jsBtn">JavaScript</button>
+
+<textarea id="outputTextarea"></textarea>
+
+<script src="navbar.js"></script>
+<script>
+  const htmlBtn = document.getElementById('htmlBtn');
+  const cssBtn = document.getElementById('cssBtn');
+  const jsBtn = document.getElementById('jsBtn');
+  const outputTextarea = document.getElementById('outputTextarea');
+  const navBar = document.querySelector('nav');
+
+  htmlBtn.addEventListener('click', () => {
+    outputTextarea.value = navBar.innerHTML;
+  });
+
+  cssBtn.addEventListener('click', () => {
+    const styles = getComputedStyle(navBar);
+    outputTextarea.value = Array.from(styles)
+      .map(prop => ${prop}: ${styles.getPropertyValue(prop)})
+      .join('
+');
+  });
+
+  jsBtn.addEventListener('click', () => {
+    fetch('navbar.js')
+      .then(response => response.text())
+      .then(jsCode => {
+        outputTextarea.value = jsCode;
+      });
+  });
+</script>
+

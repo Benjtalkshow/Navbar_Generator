@@ -21,21 +21,21 @@ const banner = document.querySelector('.banner');
 
 //slider container 
 const slideContainer = document.querySelector('.slider-container');
-(function(){
-  slideContainer.innerHTML = `
-  <div class="slide w-[50%] h-5 relative py-10">
-  <input type="range" min="1" max="100" value="1" class="slider w-full h-5 bg-indigo-700" id="myRange">
-  <div class="output mt-2"><span id="demo">1px</span></div>
-</div>
-<div class="slide w-[50%] h-5 relative py-10">
-  <input type="range" min="1" max="100" value="1" class="slider w-full h-5 bg-indigo-700" id="myRange">
-  <div class="output mt-2"><span id="demo">1px</span></div>
-</div>
-<div class="slide w-[50%] h-5 relative py-10">
-  <input type="range" min="1" max="100" value="1" class="slider w-full h-5 bg-indigo-700" id="myRange">
-  <div class="output mt-2"><span id="demo">1px</span></div>
-</div>`
-})()
+// (function(){
+//   slideContainer.innerHTML = `
+//   <div class="slide w-[50%] h-5 relative py-10">
+//   <input type="range" min="1" max="100" value="1" class="slider w-full h-5 bg-indigo-700" id="myRange">
+//   <div class="output mt-2"><span id="demo">1px</span></div>
+// </div>
+// <div class="slide w-[50%] h-5 relative py-10">
+//   <input type="range" min="1" max="100" value="1" class="slider w-full h-5 bg-indigo-700" id="myRange">
+//   <div class="output mt-2"><span id="demo">1px</span></div>
+// </div>
+// <div class="slide w-[50%] h-5 relative py-10">
+//   <input type="range" min="1" max="100" value="1" class="slider w-full h-5 bg-indigo-700" id="myRange">
+//   <div class="output mt-2"><span id="demo">1px</span></div>
+// </div>`
+// })()
 
 //print section
 const printSection = document.querySelector('.printsection');

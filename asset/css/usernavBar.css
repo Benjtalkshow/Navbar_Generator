@@ -27,7 +27,7 @@
 .navbar .unordered-list {
     list-style: none;
     display: flex;
-    gap: 25px;
+    /* gap: 25px; */
 }
 
 .list-items .list-links {

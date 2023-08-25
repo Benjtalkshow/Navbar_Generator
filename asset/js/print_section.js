@@ -90,9 +90,14 @@ function eddd(){
 const slider = document.getElementById("myRange");
 const output = document.getElementById("demo");
 const outputDiv = document.getElementById("output");
+const unorderedList = document.querySelector('.unordered-list');
+unorderedList.style.gap = slider.value + "px";
+output.innerHTML = slider.value + "px";
 
 slider.addEventListener("input", function() {
   output.innerHTML = slider.value + "px";
-//   outputDiv.style.left = (slider.value / 100) * 100 + "px";
-//   outputDiv.style.top = (100 - slider.value) / 2 + "px";
+  const sliderValue = output.innerHTML;
+  unorderedList.style.gap = sliderValue;
+//   output.style.left = (slider.value / 100) * 100 + "px";
+//   output.style.top = (100 - slider.value) / 2 + "px";
 });
