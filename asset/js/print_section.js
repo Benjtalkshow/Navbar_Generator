@@ -20,29 +20,25 @@ printButton.addEventListener("click", () => {
 });
 
 
-//code editors function
-function editors() {
-    const editors = document.querySelectorAll(".editor");
-    editors.forEach((editor, editor_Index) => {
-        codeListBtn(editor, editor_Index);
-    });
-}
-editors();
-
 //code list button function
-function codeListBtn(editor, editor_Index) {
-    const codeListBtn = document.querySelectorAll(".code-list-btn");
-    codeListBtn.forEach((btn, btn_Index) => {
-        btn.addEventListener("click", () => {
-            if (btn_Index == editor_Index) {
-                editor.classList.remove("hidden");
-            } else {
-                editor.classList.add("hidden");
-            }
-        });
+const codeListBtn = document.querySelectorAll(".code-list-btn");
+codeListBtn.forEach((btn, btn_Index) => {
+    btn.addEventListener("click", () => {
+     editors(btn_Index)   
     });
+});
+
+//code editors function
+function editors(btn_Index) {
+const editors = document.querySelectorAll(".editor");
+editors.forEach((editor, editor_Index) => {
+    if (btn_Index == editor_Index) {
+            editor.classList.remove("hidden");
+        } else {
+            editor.classList.add("hidden");
+        }
+});
 }
-codeListBtn();
 
 //code to copy texts
 const copyBtn = document.querySelectorAll('.copy-btn');
@@ -93,11 +89,15 @@ const outputDiv = document.getElementById("output");
 const unorderedList = document.querySelector('.unordered-list');
 unorderedList.style.gap = slider.value + "px";
 output.innerHTML = slider.value + "px";
+output.style.left = slider.value + "px";
 
-slider.addEventListener("input", function() {
-  output.innerHTML = slider.value + "px";
-  const sliderValue = output.innerHTML;
-  unorderedList.style.gap = sliderValue;
-//   output.style.left = (slider.value / 100) * 100 + "px";
-//   output.style.top = (100 - slider.value) / 2 + "px";
+slider.addEventListener("input", function(event) {
+  output.innerHTML = event.target.value + "px";
+  unorderedList.style.gap = event.target.value + "px";
+  output.style.left = event.target.value - 10 + "%";
+  if(event.target.value == 1){
+    output.style.marginLeft = 10 + "%";
+  } else if(event.target.value > 1) {
+    output.style.marginLeft = 0 + "%";
+  }
 });
