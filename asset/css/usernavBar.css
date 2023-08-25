@@ -16,18 +16,23 @@
 
 .logo .image-logo {
     width: 50px;
-    border-radius: 50%;
+    height: 50px;
+    cursor: pointer;
+    object-fit: contain;
+    -o-object-fit: contain;
+    object-position: center;
+    -o-object-position: center;
 }
 
 .logo .text-logo {
     font-size: 1.5rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .navbar .unordered-list {
     list-style: none;
     display: flex;
-    /* gap: 25px; */
 }
 
 .list-items .list-links {
@@ -35,6 +40,7 @@
     font-size: 1.2rem;
     font-weight: 500;
     color: #000;
+    cursor: pointer;
     transition: .3s ease-in-out;
 }
 .list-links:hover {

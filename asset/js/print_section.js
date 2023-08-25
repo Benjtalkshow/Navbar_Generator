@@ -64,7 +64,7 @@ copyBtn.forEach((btn, copyBtn_Index) => {
     })
 })
 
-function eddd(){
+function checkClassName(){
     //checking classname
     const edition = document.querySelectorAll('.editor-text')
     edition.forEach((edd) => {
@@ -79,25 +79,6 @@ function eddd(){
         }
     })
     //end of checking classname
-}eddd()
+}checkClassName()
 
 
-// slider function
-const slider = document.getElementById("myRange");
-const output = document.getElementById("demo");
-const outputDiv = document.getElementById("output");
-const unorderedList = document.querySelector('.unordered-list');
-unorderedList.style.gap = slider.value + "px";
-output.innerHTML = slider.value + "px";
-output.style.left = slider.value + "%";
-
-slider.addEventListener("input", function(event) {
-  output.innerHTML = event.target.value + "px";
-  unorderedList.style.gap = event.target.value + "px";
-  output.style.left = event.target.value - 10 + "%";
-  if(event.target.value == 1){
-    output.style.marginLeft = 10 + "%";
-  } else if(event.target.value > 10) {
-    output.style.marginLeft = 0 + "%";
-  }
-});

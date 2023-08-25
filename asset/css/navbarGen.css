@@ -49,11 +49,13 @@
 }
 
 input[type="color"] {
-  width: 10%;
+  width: 50%;
   height: 50px;
   padding: .5rem;
-  background-color: transparent;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
   border: 0;
-  border-radius: 100%;
-  color: #ddd;
+  cursor: pointer;
 }
