@@ -17,7 +17,9 @@
   position: absolute;
 }
 
-#demo {
+.firstDemo,
+.secondDemo,
+.thirdDemo {
   position: absolute;
   top: 0;
   left: 0;
