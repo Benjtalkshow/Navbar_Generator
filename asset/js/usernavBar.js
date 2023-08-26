@@ -109,7 +109,7 @@ changeLogo.forEach((btns) => {
 
 
 
-//toggling between logo popup uploader
+//toggling between image logo popup and text logo popup uploader
 const changeImageLogoContent = document.querySelector('.changeImageLogoContent');
 const changeTextLogoContent = document.querySelector('.changeTextLogoContent');
 const logos = document.querySelectorAll('.logo');
