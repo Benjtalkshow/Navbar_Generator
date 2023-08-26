@@ -1,4 +1,4 @@
-//logo controller js function
+//select logo type controller js function
 const navLogo = document.querySelector(".logo-container");
 const imageLogo = document.querySelector(".logo-container > img");
 const textLogo = document.querySelector(".logo-container > h1");
@@ -23,7 +23,7 @@ chooseLogo.addEventListener("change", () => {
     }
 });
 
-// slider function
+// slider function for nav links gap
 const slider = document.getElementById("myRange");
 const output = document.getElementById("demo");
 const outputDiv = document.getElementById("output");
@@ -70,28 +70,12 @@ color_Input.addEventListener("input", (setColor) => {
     }
 });
 
-//Changing logo when clicked on
-// const logoElement = document.querySelector("input[type='file']");
-// const imageUploadBtn = document.querySelector(".imagelogo-upload-btn");
 
-
-// imageUploadBtn.addEventListener("click", (event) => {
-//     changeContent.classList.add('hidden')
-//     event.preventDefault();
-//     var file = logoElement.files[0];
-//     if (file) {
-//         var reader = new FileReader();
-//         reader.onload = function (e) {
-//             imageLogo.src = e.target.result;
-//         };
-//         reader.readAsDataURL(file);
-//     } else {
-//         alert("Please select an image file first.");
-//     }
-// });
+//logo upload function, when upload button is clicked
 const changeLogo = document.querySelectorAll('.changeLogo');
 changeLogo.forEach((btns) => {
     const logoElement = document.querySelector("input[type='file']");
+    const textLogoInput = document.querySelector(".textLogoInput");
     btns.addEventListener('click', (event) => {
         event.preventDefault();
         if (btns.closest('.changeImageLogoContent')) {
@@ -100,12 +84,23 @@ changeLogo.forEach((btns) => {
                 const reader = new FileReader();
                 reader.onload = function (e) {
                     imageLogo.src = e.target.result;
-                                };
+                };
                 reader.readAsDataURL(file);
             } else {
                 alert("Please select an image file first.");
             }
             btns.closest('.changeImageLogoContent').classList.add('hidden');
+        } else if (btns.closest('.changeTextLogoContent')) {
+            const value = textLogoInput.value.trim();
+            const words = value.split(/\s+/);
+            if (words.length > 1) {
+                alert("Please enter only one word.");
+            } else if (words == "") {
+                alert("Please enter only one word.");
+            } else {
+                textLogo.textContent = words;
+                btns.closest('.changeTextLogoContent').classList.add('hidden');
+            }
         }
     })
 })
@@ -114,7 +109,7 @@ changeLogo.forEach((btns) => {
 
 
 
-
+//toggling between logo popup uploader
 const changeImageLogoContent = document.querySelector('.changeImageLogoContent');
 const changeTextLogoContent = document.querySelector('.changeTextLogoContent');
 const logos = document.querySelectorAll('.logo');
