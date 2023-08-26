@@ -1,7 +1,7 @@
 //logo controller js function
-const navLogo = document.querySelector(".logo");
-const imageLogo = document.querySelector(".logo > img");
-const textLogo = document.querySelector(".logo > h1");
+const navLogo = document.querySelector(".logo-container");
+const imageLogo = document.querySelector(".logo-container > img");
+const textLogo = document.querySelector(".logo-container > h1");
 const chooseLogo = document.querySelector("#choose-logo");
 
 chooseLogo.addEventListener("change", () => {
@@ -71,25 +71,66 @@ color_Input.addEventListener("input", (setColor) => {
 });
 
 //Changing logo when clicked on
-const changeContent = document.querySelector('.changeContent');
-const logoElement = document.querySelector("input[type='file']");
-const imageUploadBtn = document.querySelector(".image-upload-btn");
-imageLogo.addEventListener('click', () => {
-    changeContent.classList.toggle('hidden')
+// const logoElement = document.querySelector("input[type='file']");
+// const imageUploadBtn = document.querySelector(".imagelogo-upload-btn");
+
+
+// imageUploadBtn.addEventListener("click", (event) => {
+//     changeContent.classList.add('hidden')
+//     event.preventDefault();
+//     var file = logoElement.files[0];
+//     if (file) {
+//         var reader = new FileReader();
+//         reader.onload = function (e) {
+//             imageLogo.src = e.target.result;
+//         };
+//         reader.readAsDataURL(file);
+//     } else {
+//         alert("Please select an image file first.");
+//     }
+// });
+const changeLogo = document.querySelectorAll('.changeLogo');
+changeLogo.forEach((btns) => {
+    const logoElement = document.querySelector("input[type='file']");
+    btns.addEventListener('click', (event) => {
+        event.preventDefault();
+        if (btns.closest('.changeImageLogoContent')) {
+            const file = logoElement.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    imageLogo.src = e.target.result;
+                                };
+                reader.readAsDataURL(file);
+            } else {
+                alert("Please select an image file first.");
+            }
+            btns.closest('.changeImageLogoContent').classList.add('hidden');
+        }
+    })
 })
 
-imageUploadBtn.addEventListener("click", (event) => {
-    changeContent.classList.add('hidden')
-    event.preventDefault();
-    var file = logoElement.files[0];
-    if (file) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            imageLogo.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-    } else {
-        alert("Please select an image file first.");
-    }
-});
+
+
+
+
+
+const changeImageLogoContent = document.querySelector('.changeImageLogoContent');
+const changeTextLogoContent = document.querySelector('.changeTextLogoContent');
+const logos = document.querySelectorAll('.logo');
+logos.forEach((logo, index) => {
+    logo.addEventListener('click', () => {
+        if (index === 0) {
+            changeImageLogoContent.classList.toggle('hidden')
+            if (!changeTextLogoContent.classList.contains('hidden')) {
+                changeTextLogoContent.classList.add('hidden')
+            }
+        } else {
+            changeTextLogoContent.classList.toggle('hidden')
+            if (!changeImageLogoContent.classList.contains('hidden')) {
+                changeImageLogoContent.classList.add('hidden')
+            }
+        }
+    })
+})
 
