@@ -1,12 +1,12 @@
-//learn more button remover
+//top banner remover
 const learnMore = document.querySelector(".learn-more");
 const learnMoreBtn = document.querySelector(".learn-more-btn");
 learnMoreBtn.addEventListener('click', () => {
     learnMore.classList.add("hidden");
 })
 
-//print button function
-//print button function
+
+//Add event listeners to print button
 const printButton = document.querySelector(".printButton");
 const view = document.querySelector(".view");
 
@@ -20,7 +20,7 @@ printButton.addEventListener("click", () => {
 });
 
 
-//code list button function
+//js function for each code buttons: HTML, CSS and JS
 const codeListBtn = document.querySelectorAll(".code-list-btn");
 codeListBtn.forEach((btn, btn_Index) => {
     btn.addEventListener("click", () => {
@@ -28,10 +28,11 @@ codeListBtn.forEach((btn, btn_Index) => {
     });
 });
 
-//code editors function
+//function to hide or dispay each code editor when the code button is clicked
 function editors(btn_Index) {
 const editors = document.querySelectorAll(".editor");
 editors.forEach((editor, editor_Index) => {
+    copyCodeFromTextEditor(editor, editor_Index)
     if (btn_Index == editor_Index) {
             editor.classList.remove("hidden");
         } else {
@@ -40,29 +41,29 @@ editors.forEach((editor, editor_Index) => {
 });
 }
 
-//code to copy texts
+//js fucntion to copy code from text editors
 const copyBtn = document.querySelectorAll('.copy-btn');
-copyBtn.forEach((btn, copyBtn_Index) => {
-    const textEditors = document.querySelectorAll('.editor-text')
-    btn.addEventListener('click', () => {
-        textEditors.forEach((textEditor, textEditorIndex) => {
-            if (copyBtn_Index === textEditorIndex) {
-                const clipboard = navigator.clipboard;
-                const showCopiedText = textEditor.textContent
-                try {
-                    clipboard.writeText(showCopiedText);
-                    btn.textContent = "Copied!!";
-                    setTimeout(() => {
-                        btn.textContent = "Copy"
-                    }, 2000)
-                    return true;
-                } catch (error) {
-                    return false;
+function copyCodeFromTextEditor(editor, editor_Index){
+    copyBtn.forEach((btn, copyBtn_Index) => {
+        btn.addEventListener('click', () => {
+                if (copyBtn_Index === editor_Index) {
+                    const clipboard = navigator.clipboard;
+                    const showCopiedText = editor.textContent
+                    try {
+                        clipboard.writeText(showCopiedText);
+                        btn.textContent = "Copied!!";
+                        setTimeout(() => {
+                            btn.textContent = "Copy"
+                        }, 2000)
+                        return true;
+                    } catch (error) {
+                        return false;
+                    }
                 }
-            }
         })
     })
-})
+}
+
 
 function checkClassName(){
     //checking classname
@@ -79,6 +80,10 @@ function checkClassName(){
         }
     })
     //end of checking classname
-}checkClassName()
+}
+checkClassName()
 
-
+// const nav = document.querySelector('.nav-container');
+// document.addEventListener('click', () => {
+//     alert(nav.innerHTML);
+//   });

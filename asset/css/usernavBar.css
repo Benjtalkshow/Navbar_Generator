@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    gap: 5px;
 }
 
 .logo-container .image-logo {
@@ -37,7 +38,6 @@
 
 .list-items .list-links {
     text-decoration: none;
-    /* font-size: 1.2rem; */
     font-weight: 500;
     color: #000;
     cursor: pointer;
@@ -46,6 +46,10 @@
 .list-links:hover {
     color: rgb(99 102 241);
 }
+.list-items .list-links.active {
+    color: rgb(99, 102, 241);
+    font-weight: bold;
+  }
 .nav-btn button {
     background-color: rgb(99 102 241);
     outline: none;
