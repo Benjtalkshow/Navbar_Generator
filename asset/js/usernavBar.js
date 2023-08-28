@@ -119,26 +119,39 @@ logos.forEach((logo, index) => {
 
 
 //create custom buttons
-// const selectButtons = document.getElementById('choose-button');
-// const buttonContainer = document.querySelector('.nav-btn');
+const selectButtons = document.getElementById('choose-button');
+const buttonContainer = document.querySelector('.nav-btn');
 
-// //initialize custom button
-// const defaultButtons = parseInt(selectButtons.value);
-// generateCustomeButtons(defaultButtons);
+//initialize custom button
+const defaultButtons = parseInt(selectButtons.value);
+generateCustomeButtons(defaultButtons);
 
-// selectButtons.addEventListener("change", () => {
-//   const selectValue = parseInt(selectButtons.value);
-//   generateCustomeButtons(selectValue);
-// });
+selectButtons.addEventListener("change", () => {
+  const selectValue = parseInt(selectButtons.value);
+  generateCustomeButtons(selectValue);
+});
 
-// function generateCustomeButtons(val) {
-//   buttonContainer.innerHTML = "";
-//   for (let i = 1; i <= val; i++) {
-//     const btn = document.createElement("button");
-//     btn.textContent = `Button ${i}`;
-//     btn.className = "navbtn";
-//     buttonContainer.appendChild(btn);
-// }
+function generateCustomeButtons(val) {
+  buttonContainer.innerHTML = "";
+  for (let i = 1; i <= val; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = `Button ${i}`;
+    btn.className = "navbtn";
+    buttonContainer.appendChild(btn);
+}
+}
+
+
+//Edit buttons textcontent
+const createdButtons = document.querySelectorAll('.navbtn');
+console.log(createdButtons);
+for(let i = 0; i < createdButtons.length; i++){
+  createdButtons[i].addEventListener('click',(e) => {
+    e.preventDefault();
+    const buttonTextContent = prompt('Enter Button Text, like:',createdButtons[i].textContent);
+    createdButtons[i].textContent = buttonTextContent;
+  })
+}
 
 
 
@@ -275,6 +288,7 @@ function updateOutput(value) {
     });
   });
 }
+
 
 //Add active to the first child of the nav links
 const firstLink = document.querySelector(".list-items:first-child .list-links");
