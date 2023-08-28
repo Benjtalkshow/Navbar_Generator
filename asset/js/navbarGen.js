@@ -76,20 +76,20 @@ const siteNav = document.querySelector('.sitenav');
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
   </svg>
-  Nav
+  Navbar
 </a>
 <a href="#" class="flex flex-col items-center text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 20H3a2 2 0 01-2-2V6a2 2 0 012-2h18a2 2 0 012 2v12a2 2 0 01-2 2z"/>
   </svg>
-  Landing
+  Hero
 </a>
 <a href="#" class="flex flex-col items-center text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
   </svg>
-  Product
+  Cards
 </a>
 <a href="#" class="flex flex-col items-center text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -52,8 +52,6 @@ firstSlider.addEventListener("input", (event) => {
   }
 });
 
-
-
 //logo upload function, when upload button is clicked
 const logoChangeButtons = document.querySelectorAll(".changeLogo");
 const logoElement = document.querySelector("input[type='file']");
@@ -76,7 +74,6 @@ logoChangeButtons.forEach((button) => {
         alert("Please select an image file.");
       }
       button.closest(".changeImageLogoContent").classList.add("hidden");
-
     } else if (button.closest(".changeTextLogoContent")) {
       const textLogoValue = textLogoInput.value.trim();
 
@@ -120,6 +117,31 @@ logos.forEach((logo, index) => {
   });
 });
 
+
+//create custom buttons
+// const selectButtons = document.getElementById('choose-button');
+// const buttonContainer = document.querySelector('.nav-btn');
+
+// //initialize custom button
+// const defaultButtons = parseInt(selectButtons.value);
+// generateCustomeButtons(defaultButtons);
+
+// selectButtons.addEventListener("change", () => {
+//   const selectValue = parseInt(selectButtons.value);
+//   generateCustomeButtons(selectValue);
+// });
+
+// function generateCustomeButtons(val) {
+//   buttonContainer.innerHTML = "";
+//   for (let i = 1; i <= val; i++) {
+//     const btn = document.createElement("button");
+//     btn.textContent = `Button ${i}`;
+//     btn.className = "navbtn";
+//     buttonContainer.appendChild(btn);
+// }
+
+
+
 //create custom links
 const selectAnchorLinks = document.getElementById("choose-links");
 const list_link_unorderedList = unorderedList;
@@ -129,87 +151,134 @@ const defaultAnchorLinks = parseInt(selectAnchorLinks.value);
 generateAnchorLinks(defaultAnchorLinks);
 
 selectAnchorLinks.addEventListener("change", () => {
-    const selectedValue = parseInt(selectAnchorLinks.value);
-    generateAnchorLinks(selectedValue);
+  const selectedValue = parseInt(selectAnchorLinks.value);
+  generateAnchorLinks(selectedValue);
 });
 
 function generateAnchorLinks(count) {
-    list_link_unorderedList.innerHTML = "";
+  list_link_unorderedList.innerHTML = "";
 
-    for (let i = 1; i <= count; i++) {
-        const anchor = document.createElement("a");
-        anchor.href = `#${i}`;
-        anchor.textContent = `Links ${i}`;
-        anchor.className = "list-links";
+  for (let i = 1; i <= count; i++) {
+    const anchor = document.createElement("a");
+    anchor.href = `#${i}`;
+    anchor.textContent = `Links ${i}`;
+    anchor.className = "list-links";
 
-        const listItem = document.createElement("li");
-        listItem.appendChild(anchor);
-        listItem.className = "list-items";
+    const listItem = document.createElement("li");
+    listItem.appendChild(anchor);
+    listItem.className = "list-items";
 
-        list_link_unorderedList.appendChild(listItem);
+    list_link_unorderedList.appendChild(listItem);
+  }
+
+
+  // slider font size selection for the textlogo, links and the button text
+  const secondSlider = document.querySelector(".mysecondRange");
+  const secondOutput = document.querySelector(".secondDemo");
+  const listLinks = document.querySelectorAll(".list-items > .list-links");
+  const chooseFont = document.getElementById("choose-font");
+  const navBtnFont = document.querySelector(".nav-btn > button");
+  const textLogoFont = textLogo;
+
+  //add event listener to the choose font select input
+  chooseFont.addEventListener('input', (event) => {
+    const selectElementFont = event.target.value;
+    const font_Size = 'font-size';
+
+    if (selectElementFont === "logofont") {
+        const style1 = window.getComputedStyle(textLogo, null).getPropertyValue(font_Size);
+        updateOutput(style1);
+    } else if (selectElementFont === "links") {
+        listLinks.forEach((link) => {
+            const style2 = window.getComputedStyle(link, null).getPropertyValue(font_Size);
+            updateOutput(style2);
+        });
+    } else if (selectElementFont === "btntext") {
+        const style3 = window.getComputedStyle(navBtnFont, null).getPropertyValue(font_Size);
+        updateOutput(style3);
+    } else {
+        updateOutput('1px');
     }
+});
 
-    // slider function for unordered-list font-size
-    const secondSlider = document.querySelector(".mysecondRange");
-    const secondOutput = document.querySelector(".secondDemo");
-    const listLinks = document.querySelectorAll(".list-items > .list-links");
-    
-    // Set initial styles based on slider value
-    secondOutput.innerHTML = `${secondSlider.value}px`;
-    for (let i = 0; i < listLinks.length; i++) {
-      listLinks[i].style.fontSize = `${secondSlider.value}px`;
-    }
-    
-    secondSlider.addEventListener("input", (event) => {
-      const sliderValue = event.target.value;
-    
-      secondOutput.innerHTML = `${sliderValue}px`;
-    
-      for (let i = 0; i < listLinks.length; i++) {
-        listLinks[i].style.fontSize = `${sliderValue}px`;
-      }
-    
-      secondOutput.style.left = `${sliderValue - 10}%`;
-    
-      if (sliderValue === "1") {
-        secondOutput.style.marginLeft = "10%";
-      } else if (sliderValue > 10) {
-        secondOutput.style.marginLeft = "0%";
-      }
-    });
-
-    
-     // Attach click event to each anchor
- const links = document.querySelectorAll(".list-links");
- links.forEach((link) => {
-     link.addEventListener("click", (event) => {
-         event.preventDefault();
-
-         const linkNamesInput = prompt("Enter link names (separated by comma):");
-       
-         if (linkNamesInput !== null) {
-            const linkNamesArray = linkNamesInput.split(",").map(name => name.trim());
-          
-            if (linkNamesArray.length !== count) {
-              alert(`Please provide ${count} names.`);
-              return;
-            }
-          
-            const links = document.querySelectorAll(".list-links");
-            links.forEach((link, index) => {
-              link.textContent = linkNamesArray[index];
-            });
-          } else {
-            alert("Link names not provided.");
-          }
-     });
- });
+// Function to update the output element
+function updateOutput(value) {
+    secondOutput.innerHTML = value;
+    secondOutput.style.left = value;
 }
 
 
+  // Set initial styles based on slider value
+  for (let i = 0; i < listLinks.length; i++) {
+    listLinks[i].style.fontSize = `${secondSlider.value}px`;
+  }
+
+  //add event listener to the second slider
+  secondSlider.addEventListener("input", (event) => {
+    const fontValue = chooseFont.value;
+    const sliderValue = event.target.value;
+
+    secondOutput.innerHTML = `${sliderValue}px`;
+
+    switch (fontValue) {
+      case "logofont":
+        textLogoFont.style.fontSize = `${sliderValue}px`;
+        break;
+
+      case "links":
+        for (let i = 0; i < listLinks.length; i++) {
+          listLinks[i].style.fontSize = `${sliderValue}px`;
+        }
+        break;
+
+      case "btntext":
+        navBtnFont.style.fontSize = `${sliderValue}px`;
+      default:
+        break;
+    }
+
+    secondOutput.style.left = `${sliderValue - 15}%`;
+
+    if (sliderValue === "1") {
+      secondOutput.style.marginLeft = "15%";
+    } else if (sliderValue > 10) {
+      secondOutput.style.marginLeft = "0%";
+    }
+  });
+
+
+  // Attach click event to each anchor
+  const links = document.querySelectorAll(".list-links");
+  links.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const linkNamesInput = prompt("Enter link names (separated by comma):");
+
+      if (linkNamesInput !== null) {
+        const linkNamesArray = linkNamesInput
+          .split(",")
+          .map((name) => name.trim());
+
+        if (linkNamesArray.length !== count) {
+          alert(`Please provide ${count} names.`);
+          return;
+        }
+
+        const links = document.querySelectorAll(".list-links");
+        links.forEach((link, index) => {
+          link.textContent = linkNamesArray[index];
+        });
+      } else {
+        alert("Link names not provided.");
+      }
+    });
+  });
+}
+
 //Add active to the first child of the nav links
 const firstLink = document.querySelector(".list-items:first-child .list-links");
-  firstLink.classList.add("active");
+firstLink.classList.add("active");
 
 //Add background-Color to navbar
 const navbar = document.querySelector(".navbar");
@@ -222,28 +291,28 @@ const color_Input = document.querySelector(".color");
 navbar.style.backgroundColor = color_Input.value;
 
 color_Input.addEventListener("input", (event) => {
-    const elementType = chooseElementToColor.value;
-    const colorValue = event.target.value;
+  const elementType = chooseElementToColor.value;
+  const colorValue = event.target.value;
 
-    switch (elementType) {
-        case "nav":
-            navbar.style.backgroundColor = colorValue;
-            break;
-        case "textlogo":
-            textLogo.style.color = colorValue;
-            break;
-        case "links":
-            navLinks.forEach((link) => {
-                link.style.color = colorValue;
-            });
-            break;
-        case "button":
-            navbtn.style.backgroundColor = colorValue;
-            break;
-        case "btncolor":
-            navbtn.style.color = colorValue;
-            break;
-        default:
-            break;
-    }
+  switch (elementType) {
+    case "nav":
+      navbar.style.backgroundColor = colorValue;
+      break;
+    case "textlogo":
+      textLogo.style.color = colorValue;
+      break;
+    case "links":
+      navLinks.forEach((link) => {
+        link.style.color = colorValue;
+      });
+      break;
+    case "button":
+      navbtn.style.backgroundColor = colorValue;
+      break;
+    case "btncolor":
+      navbtn.style.color = colorValue;
+      break;
+    default:
+      break;
+  }
 });

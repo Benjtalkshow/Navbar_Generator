@@ -51,9 +51,9 @@
 }
 
 input[type="color"] {
-  width: 50%;
-  height: 50px;
-  padding: .5rem;
+  width: 100px;
+  height: 70px;
+  padding: 1rem;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;

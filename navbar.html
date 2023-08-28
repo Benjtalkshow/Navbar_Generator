@@ -69,17 +69,17 @@
 </div>
   <!-- usernavBar tools -->
   <div class="slider-container py-5 px-20 w-[90%]">
-    <div class="sub-controller flex gap-10">
+    <div class="sub-controller flex gap-0">
       <div class="left-sub-controller">
         <div class="logo-controller flex gap-5 py-5">
-          <h3 class="text-lg">Choose logo type:</h3>
+          <h3 class="text-lg">Logo type:</h3>
           <select name="" id="choose-logo" class="border-2 rounded border-solid outline-none border-indigo-600 ">
             <option value="both">Both</option>
             <option value="image-type">Image</option>
             <option value="text-type">Text</option>
           </select>
         </div>
-        <div class="color-controller flex gap-5 py-5 items-center">
+        <div class="color-controller flex gap-0 py-5 items-center">
           <select name="" id="choose-element-To-color" class="border-2 rounded border-solid outline-none border-indigo-600 ">
             <option value="colors">Colors</option>
             <option value="nav">Nav</option>
@@ -103,21 +103,46 @@
             <option value="7">7</option>
             <option value="8">8</option>
           </select>
+          <h3 class="text-lg">Create button?</h3>
+          <select name="" id="choose-button" class="border-2 rounded border-solid outline-none border-indigo-600">
+            <option value="0">None</option>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+          </select>
         </div>
       </div>
     </div>
+
+    <div class="flex justify-start items-center gap-5">
+      <select name="" id="choose-links" class="border-2 rounded border-solid outline-none border-indigo-600">
+        <option value="gap">Link gap</option>
+      </select>
     <div class="slide w-[50%] h-5 relative py-10">
       <input type="range" min="1" max="100" value="25" class="slider myfirstRange w-full h-5 bg-indigo-700">
       <div class="output mt-2"><span class="firstDemo"></span></div>
     </div>
-    <div class="slide w-[50%] h-5 relative py-10">
-      <input type="range" min="1" max="100" value="14" class="slider mysecondRange w-full h-5 bg-indigo-700">
-      <div class="output mt-2"><span class="secondDemo">1px</span></div>
     </div>
-    <div class="slide w-[50%] h-5 relative py-10">
-      <input type="range" min="1" max="100" value="1" class="slider mythirdRange w-full h-5 bg-indigo-700">
-      <div class="output mt-2"><span class="thirdDemo">1px</span></div>
-    </div>`
+    <div class="flex justify-start items-center gap-5">
+      <select name="" id="choose-font" class="border-2 rounded border-solid outline-none border-indigo-600">
+        <option value="fontsize">font Size</option>
+        <option value="logofont">logo</option>
+        <option value="links">links</option>
+        <option value="btntext">button</option>
+      </select>
+      <div class="slide w-[50%] h-5 relative py-10 flex gap-8 items-center">
+          <input type="range" min="1" max="100" value="14" class="slider mysecondRange w-full h-5 bg-indigo-700">
+          <div class="output mt-2"><span class="secondDemo">1px</span></div>
+      </div>
+    </div>
+    <div class="flex justify-start items-center gap-5">
+      <select name="" id="choose-links" class="border-2 rounded border-solid outline-none border-indigo-600">
+        <option value="width">NavWidth</option>
+      </select>
+      <div class="slide w-[50%] h-5 relative py-10">
+        <input type="range" min="1" max="100" value="1" class="slider mythirdRange w-full h-5 bg-indigo-700">
+        <div class="output mt-2"><span class="thirdDemo">1px</span></div>
+      </div>
+    </div>
   </div>
   <!--end usernavBar tools -->
   <!-- print-section-start -->
