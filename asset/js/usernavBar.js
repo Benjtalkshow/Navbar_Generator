@@ -124,35 +124,47 @@ const buttonContainer = document.querySelector('.nav-btn');
 
 //initialize custom button
 const defaultButtons = parseInt(selectButtons.value);
-generateCustomeButtons(defaultButtons);
+generateCustomButtons(defaultButtons);
 
 selectButtons.addEventListener("change", () => {
   const selectValue = parseInt(selectButtons.value);
-  generateCustomeButtons(selectValue);
+  generateCustomButtons(selectValue);
 });
 
-function generateCustomeButtons(val) {
+function generateCustomButtons(val) {
   buttonContainer.innerHTML = "";
-  for (let i = 1; i <= val; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = `Button ${i}`;
-    btn.className = "navbtn";
-    buttonContainer.appendChild(btn);
+  if (val === 0) {
+    buttonContainer.classList.add('hidden');
+  } else {
+    buttonContainer.classList.remove('hidden');
+
+    for (let i = 1; i <= val; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = `Button ${i}`;
+      btn.className = "navbtn";
+      buttonContainer.appendChild(btn);
+    }
+  }
 }
-}
+
 
 
 //Edit buttons textcontent
 const createdButtons = document.querySelectorAll('.navbtn');
-console.log(createdButtons);
-for(let i = 0; i < createdButtons.length; i++){
-  createdButtons[i].addEventListener('click',(e) => {
-    e.preventDefault();
-    const buttonTextContent = prompt('Enter Button Text, like:',createdButtons[i].textContent);
-    createdButtons[i].textContent = buttonTextContent;
-  })
+function creatButtons(created_Buttons) {
+  for (let i = 0; i < created_Buttons.length; i++) {
+    created_Buttons[i].addEventListener('click', (e) => {
+      e.preventDefault();
+      const buttonTextContent = prompt('Enter Button Text, like:', createdButtons[i].textContent);
+      if(buttonTextContent == null){
+    created_Buttons[i].textContent = `Button ${i + 1}`;
+      } else {
+        created_Buttons[i].textContent = buttonTextContent;
+      }
+    })
+  }
 }
-
+creatButtons(createdButtons);
 
 
 //create custom links
@@ -199,26 +211,26 @@ function generateAnchorLinks(count) {
     const font_Size = 'font-size';
 
     if (selectElementFont === "logofont") {
-        const style1 = window.getComputedStyle(textLogo, null).getPropertyValue(font_Size);
-        updateOutput(style1);
+      const style1 = window.getComputedStyle(textLogo, null).getPropertyValue(font_Size);
+      updateOutput(style1);
     } else if (selectElementFont === "links") {
-        listLinks.forEach((link) => {
-            const style2 = window.getComputedStyle(link, null).getPropertyValue(font_Size);
-            updateOutput(style2);
-        });
+      listLinks.forEach((link) => {
+        const style2 = window.getComputedStyle(link, null).getPropertyValue(font_Size);
+        updateOutput(style2);
+      });
     } else if (selectElementFont === "btntext") {
-        const style3 = window.getComputedStyle(navBtnFont, null).getPropertyValue(font_Size);
-        updateOutput(style3);
+      const style3 = window.getComputedStyle(navBtnFont, null).getPropertyValue(font_Size);
+      updateOutput(style3);
     } else {
-        updateOutput('1px');
+      updateOutput('1px');
     }
-});
+  });
 
-// Function to update the output element
-function updateOutput(value) {
+  // Function to update the output element
+  function updateOutput(value) {
     secondOutput.innerHTML = value;
     secondOutput.style.left = value;
-}
+  }
 
 
   // Set initial styles based on slider value
@@ -260,7 +272,7 @@ function updateOutput(value) {
   });
 
 
-  // Attach click event to each anchor
+  // Add click event to edit each anchor links
   const links = document.querySelectorAll(".list-links");
   links.forEach((link) => {
     link.addEventListener("click", (event) => {
